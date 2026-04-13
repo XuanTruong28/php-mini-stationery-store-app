@@ -31,5 +31,37 @@ return [
         'category' => 'Paper',
         'price' => 12000,
         'stock' => 2
+    ],
+    [
+        'id' => 105,
+        'name' => 'Mechanical Pencil',
+        'brand' => 'Pentel',
+        'category' => 'Writing',
+        'price' => 35000,
+        'stock' => 15
+    ],
+    [
+        'id' => 106,
+        'name' => 'A4 Paper 70gsm',
+        'brand' => 'Double A',
+        'category' => 'Paper',
+        'price' => 95000,
+        'stock' => 120
+    ],
+    [
+        'id' => 107,
+        'name' => 'Highlighter Set',
+        'brand' => 'Stabilo',
+        'category' => 'Writing',
+        'price' => 85000,
+        'stock' => 0
+    ],
+    [
+        'id' => 108,
+        'name' => 'Scissors',
+        'brand' => 'Deli',
+        'category' => 'Accessories',
+        'price' => 18000,
+        'stock' => 8
     ]
 ];
