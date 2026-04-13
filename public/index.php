@@ -1,5 +1,5 @@
 <?php
-// Nạp dữ liệu và hàm để hiển thị số liệu tổng quan ngay tại trang chủ
+// Input data
 $products = require __DIR__ . '/../src/Data/products.php';
 require __DIR__ . '/../src/Helpers/store_functions.php';
 
@@ -18,7 +18,7 @@ $totalQuantity = calculateTotalStock($products);
         h1 { color: #2c3e50; margin-bottom: 5px; font-size: 1.8rem; }
         .subtitle { color: #7f8c8d; margin-bottom: 30px; font-size: 0.9rem; }
         
-        /* Khu vực Tổng quan */
+        /* Overview */
         .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
         .overview-item { background: #f8fafc; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; }
         .overview-label { font-size: 0.8rem; color: #64748b; text-transform: uppercase; display: block; }
