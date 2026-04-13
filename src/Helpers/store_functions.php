@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Phân loại trạng thái dựa trên số lượng tồn kho
+ * Phan loai ton kho
  */
 function getProductStatus(int $stock): string {
     if ($stock <= 0) {
@@ -13,7 +13,7 @@ function getProductStatus(int $stock): string {
 }
 
 /**
- * Tính tổng tất cả vật tư trong kho
+ * Tinh tong
  */
 function calculateTotalStock(array $products): int {
     return array_reduce($products, function ($carry, $item) {
@@ -22,7 +22,7 @@ function calculateTotalStock(array $products): int {
 }
 
 /**
- * Lấy danh sách các mặt hàng còn hàng (stock > 0)
+ * Danh sach hang con
  */
 function getInStockItems(array $products): array {
     return array_values(array_filter($products, function ($item) {
