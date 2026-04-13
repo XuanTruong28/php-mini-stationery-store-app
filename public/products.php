@@ -2,7 +2,7 @@
 $products = require __DIR__ . '/../src/Data/products.php';
 require __DIR__ . '/../src/Helpers/store_functions.php';
 
-// Lấy chế độ xem từ URL (mặc định là 'list' nếu không có)
+
 $view = $_GET['view'] ?? 'list';
 
 $totalTypes = count($products);

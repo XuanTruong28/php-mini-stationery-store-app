@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stationery Management Dashboard</title>
     <style>
-        body { font-family: 'Inter', system-ui, sans-serif; background: #f1f5f9; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .card { background: white; padding: 50px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); width: 100%; max-width: 400px; text-align: center; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: #27908e92; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .card { background: white; padding: 80px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); width: 100%; max-width: 400px; text-align: center; }
         h1 { font-size: 1.8rem; color: #1e293b; margin-bottom: 30px; }
         
         .action-group { display: flex; flex-direction: column; gap: 15px; }
@@ -16,13 +16,13 @@
             justify-content: center; gap: 12px; border: none;
         }
         
-        .btn-list { background: #3b82f6; color: white; }
-        .btn-list:hover { background: #2563eb; transform: scale(1.02); }
+        .btn-list { background: #ee0f0f; color: white; }
+        .btn-list:hover { background: #9c0b0b; transform: scale(1.02); }
         
         .btn-stats { background: #10b981; color: white; }
-        .btn-stats:hover { background: #059669; transform: scale(1.02); }
+        .btn-stats:hover { background: #095f42; transform: scale(1.02); }
 
-        .icon { font-size: 1.4rem; }
+        .icon { font-size: 1.2rem; }
     </style>
 </head>
 <body>
@@ -31,7 +31,7 @@
         
         <div class="action-group">
             <a href="products.php?view=list" class="btn btn-list">
-                <span class="icon">📋</span> Danh sách chi tiết
+                <span class="icon">📋 Danh sách chi tiết</span>
             </a>
             
             <a href="products.php?view=stats" class="btn btn-stats">
