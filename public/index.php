@@ -1,37 +1,50 @@
+<?php
+// Nạp dữ liệu và hàm để hiển thị số liệu tổng quan ngay tại trang chủ
+$products = require __DIR__ . '/../src/Data/products.php';
+require __DIR__ . '/../src/Helpers/store_functions.php';
+
+$totalTypes = count($products);
+$totalQuantity = calculateTotalStock($products);
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stationery Store Management</title>
+    <title>Stationery Management</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .main-card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; max-width: 500px; width: 90%; }
-        h1 { color: #1a73e8; margin-bottom: 10px; }
-        p { color: #5f6368; margin-bottom: 30px; }
-        .btn-group { display: flex; flex-direction: column; gap: 15px; }
-        .btn { text-decoration: none; padding: 15px 25px; border-radius: 8px; font-weight: 600; transition: 0.3s; border: none; cursor: pointer; }
-        .btn-primary { background: #1a73e8; color: white; }
-        .btn-primary:hover { background: #1557b0; transform: translateY(-2px); }
-        .btn-secondary { background: #e8f0fe; color: #1a73e8; }
-        .btn-secondary:hover { background: #d2e3fc; }
-        .footer { margin-top: 30px; font-size: 0.8em; color: #9aa0a6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f9; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .dashboard-card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); width: 100%; max-width: 450px; text-align: center; }
+        h1 { color: #2c3e50; margin-bottom: 5px; font-size: 1.8rem; }
+        .subtitle { color: #7f8c8d; margin-bottom: 30px; font-size: 0.9rem; }
+        
+        /* Khu vực Tổng quan */
+        .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
+        .overview-item { background: #f8fafc; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .overview-label { font-size: 0.8rem; color: #64748b; text-transform: uppercase; display: block; }
+        .overview-value { font-size: 1.4rem; font-weight: bold; color: #1e293b; display: block; margin-top: 5px; }
+
+        .btn-main { display: block; background: #3b82f6; color: white; text-decoration: none; padding: 18px; border-radius: 12px; font-weight: 600; transition: all 0.3s; }
+        .btn-main:hover { background: #2563eb; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4); }
     </style>
 </head>
 <body>
-    <div class="main-card">
+    <div class="dashboard-card">
         <h1>Stationery Store</h1>
-        <p>Hệ thống quản lý vật tư văn phòng phẩm - Phiên bản Lab Week 1</p>
+        <p class="subtitle">Hệ thống quản lý kho nội bộ</p>
         
-        <div class="btn-group">
-            <a href="products.php" class="btn btn-primary">📦 Quản lý Kho hàng</a>
-            <a href="#" class="btn btn-secondary">📊 Báo cáo Doanh thu (Sắp có)</a>
-            <a href="#" class="btn btn-secondary">👤 Quản lý Nhân viên</a>
+        <div class="overview-grid">
+            <div class="overview-item">
+                <span class="overview-label">Sản phẩm</span>
+                <span class="overview-value"><?php echo $totalTypes; ?></span>
+            </div>
+            <div class="overview-item">
+                <span class="overview-label">Tổng tồn kho</span>
+                <span class="overview-value"><?php echo $totalQuantity; ?></span>
+            </div>
         </div>
 
-        <div class="footer">
-            HCMUS - Data Science Course Project
-        </div>
+        <a href="products.php" class="btn-main">📦 Truy cập danh sách chi tiết</a>
     </div>
 </body>
 </html>
