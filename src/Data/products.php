@@ -25,7 +25,7 @@ return [
         'stock' => 0
     ],
     [
-        'id' => 104,
+        'id' => 103,
         'name' => 'Sticky Notes',
         'brand' => '3M',
         'category' => 'Paper',
